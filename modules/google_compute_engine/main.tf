@@ -1,4 +1,4 @@
-resource "google_compute_instance" "default" {
+resource "google_compute_instance" "customer" {
   name                      = var.instance_name
   machine_type              = var.instance_machine_type
   allow_stopping_for_update = var.allow_stopping_for_update

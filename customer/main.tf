@@ -1,6 +1,6 @@
 module "network" {
   source     = "../modules/google_compute_network"
-  netowrk_name = "customer-managed-network"
+  network_name = "customer-managed-network"
 }
 
 module "compute" {
@@ -18,5 +18,5 @@ module "compute" {
 }
 
 output "customer_app_instance_public_ip" {
-  value = module.compute.customer_app_instance_public_ip
+  value = module.network.instance_static_public_ip_address
 }

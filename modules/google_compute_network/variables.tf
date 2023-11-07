@@ -15,7 +15,7 @@ variable "allowed_source_range" {
   description = "Source IP ranges for the default firewall rule"
 }
 
-variable "default_firewall_ports" {
+variable "allowed_ports" {
   type        = list(string)
   default     = ["22", "80", "443", "8080"]
   description = "Allowed ports for the default firewall rule"

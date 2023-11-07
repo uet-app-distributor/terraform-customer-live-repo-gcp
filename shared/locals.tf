@@ -1,3 +1,3 @@
 locals {
-  region = "ap-southeast-1"
+  region = "asia-southeast1"
 }

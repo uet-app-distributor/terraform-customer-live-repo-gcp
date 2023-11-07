@@ -2,18 +2,8 @@ resource "random_id" "suffix" {
   byte_length = 8
 }
 
-resource "aws_s3_bucket" "backend" {
-  bucket = "uad-customer-terraform-state-${random_id.suffix.hex}"
-
-  tags = {
-    env = "customer"
-  }
-}
-
-resource "aws_s3_bucket_versioning" "versioning_example" {
-  bucket = aws_s3_bucket.backend.id
-
-  versioning_configuration {
-    status = "Enabled"
-  }
+resource "google_storage_bucket" "backend" {
+  name                     = "uad-customer-terraform-state-${random_id.suffix.hex}"
+  location                 = "ASIA"
+  public_access_prevention = "enforced"
 }

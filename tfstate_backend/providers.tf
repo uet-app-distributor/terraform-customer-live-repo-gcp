@@ -4,13 +4,11 @@ terraform {
       source  = "hashicorp/random"
       version = "3.5.1"
     }
-    aws = {
-      source  = "hashicorp/aws"
-      version = "5.19.0"
+    google = {
+      source  = "hashicorp/google"
+      version = "5.5.0"
     }
   }
 }
 
-provider "aws" {
-  region = "ap-southeast-1"
-}
+provider "google" {}

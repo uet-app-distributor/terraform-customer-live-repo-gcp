@@ -1,4 +1,4 @@
 output "backend_bucket_name" {
-  value       = aws_s3_bucket.backend.bucket
+  value       = google_storage_bucket.backend.name
   description = "Customer backend bucket name"
 }

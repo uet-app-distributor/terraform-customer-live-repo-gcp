@@ -1,11 +1,17 @@
+resource "random_id" "suffix" {
+  byte_length = 2
+}
+
+
 module "network" {
   source     = "../modules/google_compute_network"
   network_name = "customer-managed-network"
+  resource_suffix = "-${random_id.suffix.hex}"
 }
 
 module "compute" {
   source                = "../modules/google_compute_engine"
-  instance_name         = "customer-managed-instance"
+  instance_name         = "customer-managed-instance-${random_id.suffix.hex}"
   instance_machine_type = "e2-micro"
   instance_image        = "ubuntu-os-cloud/ubuntu-2204-lts"
 

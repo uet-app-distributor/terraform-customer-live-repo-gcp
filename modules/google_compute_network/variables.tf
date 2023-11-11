@@ -20,3 +20,10 @@ variable "allowed_ports" {
   default     = ["22", "80", "443", "8080"]
   description = "Allowed ports for the default firewall rule"
 }
+
+variable resource_suffix {
+  type        = string
+  default     = ""
+  description = "Suffix for resources"
+}
+
